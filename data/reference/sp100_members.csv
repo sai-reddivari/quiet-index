@@ -1,0 +1,4 @@
+ticker,snapshot_date,source
+# TODO(sai): current S&P 100 membership, one row per ticker.
+# e.g.  AAPL,2026-08-31,"S&P DJI OEX factsheet <url>"
+# Keep the snapshot date + source — this is the survivorship-bias disclosure anchor.

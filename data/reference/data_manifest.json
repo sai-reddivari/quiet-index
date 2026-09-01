@@ -1,0 +1,7 @@
+{
+  "note": "Written by quiet_index.data.download_prices() on each pull.",
+  "tickers": ["AAPL","MSFT","NVDA","AMZN","GOOGL","META","TSLA","SPY","VXUS","TLT","GLD","BIL","MAGS","RSP"],
+  "rate_series": "DGS3MO (FRED) or ^IRX",
+  "start": "2013-01-01",
+  "last_download": null
+}
