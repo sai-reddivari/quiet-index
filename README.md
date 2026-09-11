@@ -1,50 +1,54 @@
-# The Quiet Index
+# quiet-index
 
-*Is a calm, concentrated S&P actually low-risk — or are the estimators asleep?*
+Risk decomposition and estimator-sensitivity analysis of the US large-cap index
+(S&P 100), in Python. Self-directed project alongside the CQF.
 
-> **Status:** 🚧 in progress. Spec is final ([PROJECT_SPEC.md](PROJECT_SPEC.md)); results land as the notebooks run.
+## Questions
 
-## Why this exists
+1. **Concentration.** How is index variance distributed across holdings relative
+   to capital weights — in particular, the risk contribution of the largest
+   technology names versus their weight, and how far AI-related return
+   covariation extends beyond them. Measured by splitting the index into five
+   non-overlapping groups (the Mag-7 block, then the remainder double-sorted on
+   an AI factor loading and 12-1 momentum) and computing marginal and component
+   risk contributions under several covariance estimators.
+2. **Estimator dependence.** How sensitive portfolio volatility and parametric
+   VaR/ES are to the estimator's effective lookback (full-sample vs trailing
+   window vs EWMA), and how the same estimators grade under standard VaR
+   backtests (breach counts, Kupiec, Christoffersen) across 2020, 2022, 2025,
+   and the current low-volatility period.
 
-August 2026: the VIX at its low for the year, the S&P at record highs on AI leadership, index concentration at historic levels — and every standard risk dashboard reading "calm." This project asks whether that calm is real, in three steps:
+Methods: OLS factor loadings with market orthogonalization (two-stage,
+equivalent to a joint two-factor regression), quarterly walk-forward formation
+with a trailing 252-day estimation window, Euler risk decomposition, parametric
+99%/10-day VaR and ES, EWMA/GARCH volatility. Full definitions and task list in
+[TASK_PAPER.md](TASK_PAPER.md).
 
-1. **Decomposition** — *How much of the index's risk is one bet?* The US slice is cut into **five bespoke, non-overlapping baskets** — the Mag-7 anchor, then the ex-M7 S&P 100 double-sorted on two price-only factors, **AI-beta × 12-1 momentum** (the way a bank desk builds custom baskets for institutional clients). Marginal and component VaR/ES per basket: capital weights vs risk contributions, side by side. The rule-based slicing is then cross-checked against the data's own structure via hierarchical/k-means clustering — if the clusters don't recover the baskets, that's reported too.
-2. **Allocation** — *What does the optimizer actually want?* Closed-form and long-only mean-variance frontiers under today's covariance structure (and three different expected-return assumptions, because μ estimates are the weak joint of MVO), with SPY, cap-weight, 60/40 and the tangency portfolio located on the map.
-3. **Vigilance** — *Would the standard models have caught the last shock — and how confident should we be now?* 99%/10-day VaR backtests with rolling, EWMA (fixed and calibrated λ) and GARCH(1,1) volatility, graded across four regimes (COVID 2020, the 2022 hiking cycle, Liberation Day 2025, the 2026 calm) using the Basel-style traffic light plus Kupiec and Christoffersen tests — and a capital-cost scoreboard, because a model that never breaches by permanently over-reserving isn't free either.
+## Data
 
-The risk machinery here (constrained MVO via Lagrangian closed forms, marginal VaR/ES decomposition, EWMA recursion, binomial backtest grading) is the toolkit from Level 1 of the CQF, which I completed with a 93.9% on the risk-and-return exam — applied to a question the exam didn't ask.
+Current S&P 100 membership and weights from the iShares OEF holdings file
+(snapshot date and source recorded in `data/reference/sp100_members.csv`);
+daily adjusted closes via yfinance (members and benchmark ETFs from 2018,
+SPY from 2013). Membership is held fixed over the study period — survivorship
+bias is disclosed and no performance claims are made. Raw price data is not
+committed; the notebook rebuilds it.
 
-## Headline results
+## Status
 
-*(placeholders — filled from `notebooks/05_findings.ipynb`)*
-
-| Question | Finding |
-|---|---|
-| Mag-7 share of the US slice: capital weight vs risk contribution | ⏳ `X% of weight, Y% of variance (Σ: EWMA λ=0.94)` |
-| Which factor axis carries the ex-M7 risk: AI-beta or momentum? | ⏳ |
-| Do data-driven clusters recover the rule-based baskets? | ⏳ `adjusted Rand = …` |
-| Frontier allocation to Mag-7 at SPY's current risk budget | ⏳ |
-| Today's 99%/10D VaR, by estimator (memory-ordered?) | ⏳ |
-| Backtest verdicts by regime (traffic light / Kupiec / Christoffersen) | ⏳ |
-| Capital cost: breaches vs mean reserved VaR, by model | ⏳ |
-
-<p align="center"><em>figures/ — weight-vs-risk-contribution bars · frontier map · breach charts · capital-cost scatter</em></p>
+In progress. Factor estimation and basket construction are implemented in
+`notebooks/01_data_and_sleeves.ipynb` (31 quarterly formations, 2019–present).
+Risk-decomposition results will be recorded here once finalized; backtesting
+is next.
 
 ## Reproduce
 
-```bash
+```
+python -m venv .venv && source .venv/bin/activate
 pip install -r requirements.txt
-python -m quiet_index.data     # rebuilds data/raw/ from public sources (nothing vendor-owned is committed)
-pytest                          # sanity checks: Euler decomposition, closed-form vs numerical frontier, breach counts
-# then run notebooks/01 → 05 in order
+jupyter lab notebooks/01_data_and_sleeves.ipynb
 ```
 
-## Honest limitations
+Analysis code and results are my own; some project scaffolding was AI-assisted.
+Not investment advice.
 
-Parametric-normal VaR on overlapping 10-day returns; ETF/synthetic-basket sleeve proxies; baskets are formed from **current** S&P 100 membership, so historical basket series carry survivorship bias (fine for risk decomposition, fatal for alpha claims — none are made); expected returns are scenario assumptions, not forecasts; no transaction costs or taxes. This is a risk-analytics study, not investment advice.
-
-## Provenance
-
-Repo structure and function contracts were scaffolded with AI assistance; all analysis code, results, and findings are written and independently verified by me — the same verify-everything discipline the CQF exam format demands.
-
-*Sai Reddivari · [linkedin.com/in/sai-reddivari-42750srs](https://linkedin.com/in/sai-reddivari-42750srs/) · MIT License*
+*Sai Reddivari · MIT License*
