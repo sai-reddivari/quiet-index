@@ -1,6 +1,0 @@
-date,mag7_weight,source
-# TODO(sai): quarterly snapshots of combined Mag-7 weight in the S&P 500.
-# One row per snapshot, e.g.:
-# 2024-12-31,0.335,"S&P DJI factsheet Dec 2024"
-# 2025-03-31,0.31X,"<source url>"
-# Interpolation between snapshots handled by data.load_mag7_weights().

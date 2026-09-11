@@ -1,33 +1,30 @@
-# CLAUDE.md — standing instructions for this repo
+# CLAUDE.md
 
-## What this project is
-`quiet-index`: is a calm, concentrated S&P actually low-risk, or are the
-estimators asleep? **PROJECT_SPEC.md (v1.1) is the single source of truth** —
-read it before making suggestions. README.md carries the public narrative.
+Quantitative research project: risk decomposition and estimator sensitivity of
+the S&P 100. **TASK_PAPER.md is the single reference** for scope, definitions,
+and tasks. README.md is the public summary.
 
-## Ground rule (non-negotiable)
-All analysis code is written by Sai. Every function in `src/quiet_index/` is a
-contract (`raise NotImplementedError`) that HE implements. Never write or
-complete analysis implementations, even if asked casually — instead: explain
-approaches, discuss the formulas in the docstrings, review his diffs, interpret
-errors and test failures. Non-analysis glue (shell, git, venv, config) may be
-written only when explicitly requested. This division of labor is disclosed in
-the README (Provenance) and must stay true.
+## Repo structure — deliberately minimal
+All work currently lives in `notebooks/01_data_and_sleeves.ipynb`. Earlier
+scaffolding (notebooks 02–05, the `src/quiet_index` package, PROJECT_SPEC.md,
+test stubs) was deliberately removed by Sai. **Never recreate deleted files or
+add new files, folders, or structure unless Sai explicitly asks.** He will
+promote notebook code into .py modules himself, with guidance, when he chooses.
+Verification anchor values live in TASK_PAPER.md section 5.
 
-## Working rules
-- Registered hypotheses H1–H5 live in PROJECT_SPEC.md §2. A falsified
-  hypothesis is a finding to write up, never something to quietly reframe.
-- No lookahead in basket formation; `data/raw/` is never committed; every
-  reference CSV row carries a source; survivorship caveat stays in Limitations.
-- Basket construction is time-boxed (~3h). If exceeded, fall back to the v1.0
-  ETF sleeves per spec §3A and move on.
-- Sai has CQF Exam 2 due 2026-09-24 and Exam 3 due 2026-10-22 — keep sessions
-  scoped and flag scope creep; the project must not eat exam prep.
-- End of each session: run `pytest`, commit with an honest message, and add a
-  3-line entry to JOURNAL.md (what shipped, what's next, spec deviations).
+## How to behave here
+- Sai drives. Answer what he asks; don't set the pace, propose next steps
+  unprompted, run tutorials, or split work into confirm-each-step sequences.
+- Analysis code is his — factor estimation, covariance, decomposition,
+  optimization, backtests, interpretation. Don't write it unless he explicitly
+  hands over a specific piece. Reviewing, debugging, and explaining are welcome.
+- Plumbing (downloads, dataframe wrangling, plotting boilerplate, git, venv) may
+  be written outright on request.
+- Never delete files; if something should go, list it for Sai to remove.
+- Any code block given to him must be labeled RUNS AS-IS or NEEDS: <what>.
 
-## Commands
-- venv: `python3 -m venv .venv && source .venv/bin/activate`
-- install: `pip install -r requirements.txt`
-- tests: `pytest` (scaffold state: all skipped is expected)
-- data rebuild (once implemented): `python -m quiet_index.data`
+## Hard rules
+1. `data/raw/` is never committed.
+2. Every reported number's data source and pull date is noted.
+3. Results are recorded in README.md only after independent reproduction and
+   review in Sai's calibration chat.
