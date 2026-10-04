@@ -1,0 +1,13 @@
+estimator,group,weight,risk_share,risk_share_to_weight
+Full sample,AI high,0.321021,0.337003,1.04979
+Full sample,AI low,0.212613,0.101187,0.475921
+Full sample,Momentum high,0.308108,0.291101,0.944801
+Full sample,Momentum low,0.225526,0.147089,0.652207
+Trailing 252d,AI high,0.321021,0.419658,1.30726
+Trailing 252d,AI low,0.212613,0.0245324,0.115385
+Trailing 252d,Momentum high,0.308108,0.339718,1.10259
+Trailing 252d,Momentum low,0.225526,0.104472,0.463239
+EWMA 0.94,AI high,0.321021,0.338923,1.05577
+EWMA 0.94,AI low,0.212613,0.0609458,0.286652
+EWMA 0.94,Momentum high,0.308108,0.309976,1.00606
+EWMA 0.94,Momentum low,0.225526,0.0898925,0.398591

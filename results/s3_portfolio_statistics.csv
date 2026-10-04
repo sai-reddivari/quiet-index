@@ -1,0 +1,11 @@
+scenario,portfolio,expected_return,volatility,sharpe_ratio
+Sample means,Tangency,0.668836,0.345052,1.82157
+Sample means,"Tangency, long-only",0.248617,0.158139,1.3173
+Sample means,"Long-only, 12% vol",0.181759,0.12,1.17882
+Sample means,"Long-only, 18% vol",0.274083,0.18,1.2988
+50% shrinkage,Tangency,0.213826,0.127253,1.36363
+50% shrinkage,"Tangency, long-only",0.181849,0.114595,1.23521
+50% shrinkage,"Long-only, 12% vol",0.188148,0.12,1.23207
+50% shrinkage,"Long-only, 18% vol",0.234311,0.18,1.07784
+No views,Minimum variance,,0.0977175,
+No views,"Minimum variance, long-only",,0.0984712,

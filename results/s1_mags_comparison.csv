@@ -1,0 +1,4 @@
+series,correlation,tracking_error,annualized_volatility,cumulative_log_return,cumulative_gap_vs_mags
+Cap-weighted synthetic,0.95382,0.077113,0.245489,1.29863,-0.196813
+Equal-weighted synthetic,0.985749,0.0432099,0.254532,1.20585,-0.104041
+MAGS,1,0,0.256711,1.10181,0
