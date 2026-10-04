@@ -1,0 +1,102 @@
+ticker,name,sector,weight_pct,as_of_date,source
+NVDA,NVIDIA,Information Technology,11.4,2026-10-01,https://www.ishares.com/us/products/239723/ishares-s-p-100-etf/latest-holdings.csv
+AAPL,APPLE,Information Technology,9.84,2026-10-01,https://www.ishares.com/us/products/239723/ishares-s-p-100-etf/latest-holdings.csv
+MSFT,MICROSOFT,Information Technology,7.77,2026-10-01,https://www.ishares.com/us/products/239723/ishares-s-p-100-etf/latest-holdings.csv
+AMZN,AMAZON.COM INC,Consumer Discretionary,4.97,2026-10-01,https://www.ishares.com/us/products/239723/ishares-s-p-100-etf/latest-holdings.csv
+GOOGL,ALPHABET CLASS A,Communication,4.05,2026-10-01,https://www.ishares.com/us/products/239723/ishares-s-p-100-etf/latest-holdings.csv
+AVGO,BROADCOM INC,Information Technology,3.34,2026-10-01,https://www.ishares.com/us/products/239723/ishares-s-p-100-etf/latest-holdings.csv
+META,META PLATFORMS CLASS A,Communication,3.27,2026-10-01,https://www.ishares.com/us/products/239723/ishares-s-p-100-etf/latest-holdings.csv
+GOOG,ALPHABET CLASS C,Communication,3.25,2026-10-01,https://www.ishares.com/us/products/239723/ishares-s-p-100-etf/latest-holdings.csv
+MU,MICRON TECHNOLOGY,Information Technology,2.53,2026-10-01,https://www.ishares.com/us/products/239723/ishares-s-p-100-etf/latest-holdings.csv
+AMD,ADVANCED MICRO DEVICES,Information Technology,2.05,2026-10-01,https://www.ishares.com/us/products/239723/ishares-s-p-100-etf/latest-holdings.csv
+TSLA,TESLA INC,Consumer Discretionary,2.04,2026-10-01,https://www.ishares.com/us/products/239723/ishares-s-p-100-etf/latest-holdings.csv
+BRK-B,BERKSHIRE HATHAWAY INC CLASS B,Financials,1.9,2026-10-01,https://www.ishares.com/us/products/239723/ishares-s-p-100-etf/latest-holdings.csv
+LLY,ELI LILLY,Health Care,1.88,2026-10-01,https://www.ishares.com/us/products/239723/ishares-s-p-100-etf/latest-holdings.csv
+JPM,JPMORGAN CHASE & CO,Financials,1.81,2026-10-01,https://www.ishares.com/us/products/239723/ishares-s-p-100-etf/latest-holdings.csv
+XOM,EXXONMOBIL HOLDINGS CORP,Energy,1.37,2026-10-01,https://www.ishares.com/us/products/239723/ishares-s-p-100-etf/latest-holdings.csv
+JNJ,JOHNSON & JOHNSON,Health Care,1.27,2026-10-01,https://www.ishares.com/us/products/239723/ishares-s-p-100-etf/latest-holdings.csv
+V,VISA CLASS A,Financials,1.25,2026-10-01,https://www.ishares.com/us/products/239723/ishares-s-p-100-etf/latest-holdings.csv
+INTC,INTEL CORPORATION,Information Technology,1.22,2026-10-01,https://www.ishares.com/us/products/239723/ishares-s-p-100-etf/latest-holdings.csv
+WMT,WALMART,Consumer Staples,0.95,2026-10-01,https://www.ishares.com/us/products/239723/ishares-s-p-100-etf/latest-holdings.csv
+ABBV,ABBVIE,Health Care,0.94,2026-10-01,https://www.ishares.com/us/products/239723/ishares-s-p-100-etf/latest-holdings.csv
+MA,MASTERCARD CLASS A,Financials,0.91,2026-10-01,https://www.ishares.com/us/products/239723/ishares-s-p-100-etf/latest-holdings.csv
+PLTR,PALANTIR TECHNOLOGIES CLASS A,Information Technology,0.89,2026-10-01,https://www.ishares.com/us/products/239723/ishares-s-p-100-etf/latest-holdings.csv
+CSCO,CISCO SYSTEMS INC,Information Technology,0.87,2026-10-01,https://www.ishares.com/us/products/239723/ishares-s-p-100-etf/latest-holdings.csv
+LRCX,LAM RESEARCH,Information Technology,0.87,2026-10-01,https://www.ishares.com/us/products/239723/ishares-s-p-100-etf/latest-holdings.csv
+AMAT,APPLIED MATERIAL INC,Information Technology,0.86,2026-10-01,https://www.ishares.com/us/products/239723/ishares-s-p-100-etf/latest-holdings.csv
+CVX,CHEVRON,Energy,0.84,2026-10-01,https://www.ishares.com/us/products/239723/ishares-s-p-100-etf/latest-holdings.csv
+COST,COSTCO WHOLESALE CORP,Consumer Staples,0.83,2026-10-01,https://www.ishares.com/us/products/239723/ishares-s-p-100-etf/latest-holdings.csv
+CAT,CATERPILLAR INC,Industrials,0.78,2026-10-01,https://www.ishares.com/us/products/239723/ishares-s-p-100-etf/latest-holdings.csv
+MRK,MERCK & CO INC,Health Care,0.72,2026-10-01,https://www.ishares.com/us/products/239723/ishares-s-p-100-etf/latest-holdings.csv
+BAC,BANK OF AMERICA,Financials,0.71,2026-10-01,https://www.ishares.com/us/products/239723/ishares-s-p-100-etf/latest-holdings.csv
+PG,PROCTER & GAMBLE,Consumer Staples,0.68,2026-10-01,https://www.ishares.com/us/products/239723/ishares-s-p-100-etf/latest-holdings.csv
+KO,COCA-COLA,Consumer Staples,0.68,2026-10-01,https://www.ishares.com/us/products/239723/ishares-s-p-100-etf/latest-holdings.csv
+UNH,UNITEDHEALTH GROUP,Health Care,0.67,2026-10-01,https://www.ishares.com/us/products/239723/ishares-s-p-100-etf/latest-holdings.csv
+GE,GE AEROSPACE,Industrials,0.66,2026-10-01,https://www.ishares.com/us/products/239723/ishares-s-p-100-etf/latest-holdings.csv
+PANW,PALO ALTO NETWORKS,Information Technology,0.66,2026-10-01,https://www.ishares.com/us/products/239723/ishares-s-p-100-etf/latest-holdings.csv
+PM,PHILIP MORRIS INTERNATIONAL,Consumer Staples,0.6,2026-10-01,https://www.ishares.com/us/products/239723/ishares-s-p-100-etf/latest-holdings.csv
+NFLX,NETFLIX,Communication,0.58,2026-10-01,https://www.ishares.com/us/products/239723/ishares-s-p-100-etf/latest-holdings.csv
+HD,HOME DEPOT,Consumer Discretionary,0.57,2026-10-01,https://www.ishares.com/us/products/239723/ishares-s-p-100-etf/latest-holdings.csv
+GEV,GE VERNOVA,Industrials,0.54,2026-10-01,https://www.ishares.com/us/products/239723/ishares-s-p-100-etf/latest-holdings.csv
+GS,GOLDMAN SACHS GROUP,Financials,0.53,2026-10-01,https://www.ishares.com/us/products/239723/ishares-s-p-100-etf/latest-holdings.csv
+SNDK,SANDISK,Information Technology,0.53,2026-10-01,https://www.ishares.com/us/products/239723/ishares-s-p-100-etf/latest-holdings.csv
+TXN,TEXAS INSTRUMENT INC,Information Technology,0.52,2026-10-01,https://www.ishares.com/us/products/239723/ishares-s-p-100-etf/latest-holdings.csv
+RTX,RTX,Industrials,0.51,2026-10-01,https://www.ishares.com/us/products/239723/ishares-s-p-100-etf/latest-holdings.csv
+WFC,WELLS FARGO,Financials,0.5,2026-10-01,https://www.ishares.com/us/products/239723/ishares-s-p-100-etf/latest-holdings.csv
+TMO,THERMO FISHER SCIENTIFIC INC,Health Care,0.49,2026-10-01,https://www.ishares.com/us/products/239723/ishares-s-p-100-etf/latest-holdings.csv
+ORCL,ORACLE,Information Technology,0.49,2026-10-01,https://www.ishares.com/us/products/239723/ishares-s-p-100-etf/latest-holdings.csv
+MS,MORGAN STANLEY,Financials,0.46,2026-10-01,https://www.ishares.com/us/products/239723/ishares-s-p-100-etf/latest-holdings.csv
+AMGN,AMGEN INC,Health Care,0.45,2026-10-01,https://www.ishares.com/us/products/239723/ishares-s-p-100-etf/latest-holdings.csv
+LIN,LINDE PLC,Materials,0.44,2026-10-01,https://www.ishares.com/us/products/239723/ishares-s-p-100-etf/latest-holdings.csv
+ANET,ARISTA NETWORKS,Information Technology,0.44,2026-10-01,https://www.ishares.com/us/products/239723/ishares-s-p-100-etf/latest-holdings.csv
+C,CITIGROUP,Financials,0.43,2026-10-01,https://www.ishares.com/us/products/239723/ishares-s-p-100-etf/latest-holdings.csv
+IBM,INTERNATIONAL BUSINESS MACHINES,Information Technology,0.43,2026-10-01,https://www.ishares.com/us/products/239723/ishares-s-p-100-etf/latest-holdings.csv
+QCOM,QUALCOMM,Information Technology,0.4,2026-10-01,https://www.ishares.com/us/products/239723/ishares-s-p-100-etf/latest-holdings.csv
+CRM,SALESFORCE,Information Technology,0.4,2026-10-01,https://www.ishares.com/us/products/239723/ishares-s-p-100-etf/latest-holdings.csv
+VZ,VERIZON COMMUNICATIONS INC,Communication,0.39,2026-10-01,https://www.ishares.com/us/products/239723/ishares-s-p-100-etf/latest-holdings.csv
+GILD,GILEAD SCIENCES,Health Care,0.37,2026-10-01,https://www.ishares.com/us/products/239723/ishares-s-p-100-etf/latest-holdings.csv
+DIS,WALT DISNEY,Communication,0.36,2026-10-01,https://www.ishares.com/us/products/239723/ishares-s-p-100-etf/latest-holdings.csv
+PEP,PEPSICO,Consumer Staples,0.35,2026-10-01,https://www.ishares.com/us/products/239723/ishares-s-p-100-etf/latest-holdings.csv
+DE,DEERE,Industrials,0.34,2026-10-01,https://www.ishares.com/us/products/239723/ishares-s-p-100-etf/latest-holdings.csv
+ABT,ABBOTT LABORATORIES,Health Care,0.34,2026-10-01,https://www.ishares.com/us/products/239723/ishares-s-p-100-etf/latest-holdings.csv
+T,AT&T,Communication,0.34,2026-10-01,https://www.ishares.com/us/products/239723/ishares-s-p-100-etf/latest-holdings.csv
+MCD,MCDONALDS CORP,Consumer Discretionary,0.33,2026-10-01,https://www.ishares.com/us/products/239723/ishares-s-p-100-etf/latest-holdings.csv
+DELL,DELL TECHNOLOGIES INC CLASS C,Information Technology,0.33,2026-10-01,https://www.ishares.com/us/products/239723/ishares-s-p-100-etf/latest-holdings.csv
+UNP,UNION PACIFIC,Industrials,0.33,2026-10-01,https://www.ishares.com/us/products/239723/ishares-s-p-100-etf/latest-holdings.csv
+PFE,PFIZER,Health Care,0.33,2026-10-01,https://www.ishares.com/us/products/239723/ishares-s-p-100-etf/latest-holdings.csv
+SCHW,CHARLES SCHWAB,Financials,0.33,2026-10-01,https://www.ishares.com/us/products/239723/ishares-s-p-100-etf/latest-holdings.csv
+NEE,NEXTERA ENERGY,Utilities,0.33,2026-10-01,https://www.ishares.com/us/products/239723/ishares-s-p-100-etf/latest-holdings.csv
+AXP,AMERICAN EXPRESS,Financials,0.32,2026-10-01,https://www.ishares.com/us/products/239723/ishares-s-p-100-etf/latest-holdings.csv
+BLK,BLACKROCK,Financials,0.31,2026-10-01,https://www.ishares.com/us/products/239723/ishares-s-p-100-etf/latest-holdings.csv
+COP,CONOCOPHILLIPS,Energy,0.31,2026-10-01,https://www.ishares.com/us/products/239723/ishares-s-p-100-etf/latest-holdings.csv
+BA,BOEING,Industrials,0.31,2026-10-01,https://www.ishares.com/us/products/239723/ishares-s-p-100-etf/latest-holdings.csv
+NOW,SERVICENOW,Information Technology,0.29,2026-10-01,https://www.ishares.com/us/products/239723/ishares-s-p-100-etf/latest-holdings.csv
+ISRG,INTUITIVE SURGICAL,Health Care,0.29,2026-10-01,https://www.ishares.com/us/products/239723/ishares-s-p-100-etf/latest-holdings.csv
+UBER,UBER TECHNOLOGIES,Industrials,0.28,2026-10-01,https://www.ishares.com/us/products/239723/ishares-s-p-100-etf/latest-holdings.csv
+DHR,DANAHER,Health Care,0.27,2026-10-01,https://www.ishares.com/us/products/239723/ishares-s-p-100-etf/latest-holdings.csv
+ACN,ACCENTURE PLC CLASS A,Information Technology,0.27,2026-10-01,https://www.ishares.com/us/products/239723/ishares-s-p-100-etf/latest-holdings.csv
+BMY,BRISTOL MYERS SQUIBB,Health Care,0.26,2026-10-01,https://www.ishares.com/us/products/239723/ishares-s-p-100-etf/latest-holdings.csv
+BKNG,BOOKING HOLDINGS,Consumer Discretionary,0.25,2026-10-01,https://www.ishares.com/us/products/239723/ishares-s-p-100-etf/latest-holdings.csv
+COF,CAPITAL ONE FINANCIAL CORP,Financials,0.24,2026-10-01,https://www.ishares.com/us/products/239723/ishares-s-p-100-etf/latest-holdings.csv
+MO,ALTRIA GROUP INC,Consumer Staples,0.23,2026-10-01,https://www.ishares.com/us/products/239723/ishares-s-p-100-etf/latest-holdings.csv
+MDT,MEDTRONIC PLC,Health Care,0.23,2026-10-01,https://www.ishares.com/us/products/239723/ishares-s-p-100-etf/latest-holdings.csv
+CVS,CVS HEALTH,Health Care,0.22,2026-10-01,https://www.ishares.com/us/products/239723/ishares-s-p-100-etf/latest-holdings.csv
+SBUX,STARBUCKS CORP,Consumer Discretionary,0.22,2026-10-01,https://www.ishares.com/us/products/239723/ishares-s-p-100-etf/latest-holdings.csv
+LMT,LOCKHEED MARTIN CORP,Industrials,0.21,2026-10-01,https://www.ishares.com/us/products/239723/ishares-s-p-100-etf/latest-holdings.csv
+LOW,LOWES COMPANIES INC,Consumer Discretionary,0.21,2026-10-01,https://www.ishares.com/us/products/239723/ishares-s-p-100-etf/latest-holdings.csv
+BNY,BANK OF NEW YORK MELLON CORP,Financials,0.2,2026-10-01,https://www.ishares.com/us/products/239723/ishares-s-p-100-etf/latest-holdings.csv
+SO,SOUTHERN,Utilities,0.2,2026-10-01,https://www.ishares.com/us/products/239723/ishares-s-p-100-etf/latest-holdings.csv
+ADBE,ADOBE INC,Information Technology,0.2,2026-10-01,https://www.ishares.com/us/products/239723/ishares-s-p-100-etf/latest-holdings.csv
+USB,US BANCORP,Financials,0.18,2026-10-01,https://www.ishares.com/us/products/239723/ishares-s-p-100-etf/latest-holdings.csv
+DUK,DUKE ENERGY CORP,Utilities,0.18,2026-10-01,https://www.ishares.com/us/products/239723/ishares-s-p-100-etf/latest-holdings.csv
+EMR,EMERSON ELECTRIC,Industrials,0.18,2026-10-01,https://www.ishares.com/us/products/239723/ishares-s-p-100-etf/latest-holdings.csv
+GD,GENERAL DYNAMICS CORP,Industrials,0.17,2026-10-01,https://www.ishares.com/us/products/239723/ishares-s-p-100-etf/latest-holdings.csv
+MMM,3M,Industrials,0.17,2026-10-01,https://www.ishares.com/us/products/239723/ishares-s-p-100-etf/latest-holdings.csv
+TMUS,T MOBILE US INC,Communication,0.16,2026-10-01,https://www.ishares.com/us/products/239723/ishares-s-p-100-etf/latest-holdings.csv
+INTU,INTUIT,Information Technology,0.16,2026-10-01,https://www.ishares.com/us/products/239723/ishares-s-p-100-etf/latest-holdings.csv
+CMCSA,COMCAST CLASS A,Communication,0.16,2026-10-01,https://www.ishares.com/us/products/239723/ishares-s-p-100-etf/latest-holdings.csv
+AMT,AMERICAN TOWER REIT,Real Estate,0.15,2026-10-01,https://www.ishares.com/us/products/239723/ishares-s-p-100-etf/latest-holdings.csv
+MDLZ,MONDELEZ INTERNATIONAL CLASS A,Consumer Staples,0.15,2026-10-01,https://www.ishares.com/us/products/239723/ishares-s-p-100-etf/latest-holdings.csv
+UPS,UNITED PARCEL SERVICE INC CLASS B,Industrials,0.14,2026-10-01,https://www.ishares.com/us/products/239723/ishares-s-p-100-etf/latest-holdings.csv
+GM,GENERAL MOTORS,Consumer Discretionary,0.14,2026-10-01,https://www.ishares.com/us/products/239723/ishares-s-p-100-etf/latest-holdings.csv
+FDX,FEDEX CORP,Industrials,0.13,2026-10-01,https://www.ishares.com/us/products/239723/ishares-s-p-100-etf/latest-holdings.csv

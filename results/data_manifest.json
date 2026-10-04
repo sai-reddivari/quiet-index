@@ -1,0 +1,30 @@
+{
+  "pulled_at_utc": "2026-10-04 01:36",
+  "price_source": "Yahoo Finance via yfinance, adjusted close (auto_adjust=True)",
+  "weights_source": "https://www.ishares.com/us/products/239723/ishares-s-p-100-etf/latest-holdings.csv",
+  "weights_file": "oef_weights_2026-10-01.csv",
+  "members_file": "sp100_members.csv",
+  "study_end": "2026-09-30",
+  "series": {
+    "members": {
+      "tickers": 101,
+      "first_date": "2018-01-02",
+      "last_date_pulled": "2026-10-02"
+    },
+    "benchmarks": {
+      "tickers": 5,
+      "first_date": "2018-01-02",
+      "last_date_pulled": "2026-10-02"
+    },
+    "spy": {
+      "tickers": 1,
+      "first_date": "2013-01-02",
+      "last_date_pulled": "2026-10-02"
+    },
+    "tbill": {
+      "tickers": 1,
+      "first_date": "2013-01-02",
+      "last_date_pulled": "2026-10-02"
+    }
+  }
+}

@@ -1,0 +1,32 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "quiet-index"
+version = "0.1.0"
+description = "Risk decomposition and estimator sensitivity of the S&P 100"
+readme = "README.md"
+license = { text = "MIT" }
+authors = [{ name = "Sai Reddivari" }]
+requires-python = ">=3.11"
+dependencies = [
+    "numpy>=1.26",
+    "pandas>=2.1",
+    "scipy>=1.11",
+    "matplotlib>=3.8",
+    "yfinance>=0.2.40",
+    "arch>=6.3",
+    "pyarrow>=14.0",
+    "scikit-learn>=1.4",
+    "requests>=2.31",
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=8.0", "jupyter"]
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]

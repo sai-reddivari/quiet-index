@@ -5,7 +5,7 @@ matplotlib>=3.8
 yfinance>=0.2.40
 arch>=6.3
 pyarrow>=14.0
-pytest>=8.0
 scikit-learn>=1.4
-statsmodels>=0.14
+requests>=2.31
+pytest>=8.0
 jupyter
