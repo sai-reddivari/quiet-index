@@ -1,0 +1,98 @@
+{
+  "date": "2026-10-12",
+  "test_command": ".venv/bin/python -m pytest -q",
+  "pytest": {
+    "passed": 42,
+    "failed": 0,
+    "errors": 0,
+    "skipped": 0,
+    "elapsed_seconds": 65.854
+  },
+  "research_tables_reproduced": 26,
+  "test_forecasts": 1441,
+  "model_fit_failures": [],
+  "excluded_test_dates": 0,
+  "report_matches_shared_renderer": true,
+  "browser_checks": [
+    "Estimator toggle changes metrics",
+    "Invalid weight sum rejected; prior results retained",
+    "Uniform -10% shock produces exactly 10% loss without boundary exception",
+    "2025 replay gives 21.80% loss",
+    "Relaxed thresholds clear exceptions",
+    "Applied report downloads successfully",
+    "No browser console warnings/errors observed",
+    "Self-contained HTML report visually inspected",
+    "390px and 1280px layouts have no document overflow; charts/tables scroll on narrow screens"
+  ],
+  "nonfatal_build_warnings": [
+    "joblib could not query physical cores and used logical cores",
+    "Matplotlib used a temporary writable cache"
+  ],
+  "limitations": [
+    "Research prototype using frozen prices through 2026-09-30 and current holdings weights dated 2026-10-01; not a professional ML deployment.",
+    "2020 and 2022 replays blocked for missing current-holding endpoint prices; 2025 is a current-holdings exposure replay, not actual historical fund performance.",
+    "Raw price caches are excluded from Git. The frozen bundle works without them, but independent price-based reproduction needs the original cache or a fresh vendor download that may contain revisions.",
+    "Current membership and weights introduce survivorship and historical-weight bias. Research baskets exclude missing returns and reweight available names.",
+    "Parametric-normal tail and square-root-time approximations; no derivatives repricing or liquidity liquidation model. Illustrative thresholds are not institutional risk appetite or regulatory compliance.",
+    "The tree improves RMSE and volatility-proxy MAE but does not improve primary QLIKE versus GARCH. The paired block-bootstrap interval includes zero; no demonstrated ML superiority.",
+    "AI loading denotes SMH-related exposure, separate from the ML experiment."
+  ],
+  "tree_minus_garch_test_qlike": 0.016081717467835634,
+  "paired_block_95_interval": [
+    -0.022858966344606546,
+    0.05638781958957393
+  ],
+  "browser_checks_context": "Completed during the local walkthrough before release packaging. Renderer, JavaScript and CSS hashes are unchanged; release HTTP and artifact checks below were rerun after the provenance and missing-cache fixes.",
+  "release_review": {
+    "source_commit": "936f37f79582d65fdd4b846ac8cfe0d938be4404",
+    "all_code_sha256_match_source_commit": true,
+    "report_git_base_commit": "2a4fe77fc88f5175fc14592b6a11e4e5611605a0",
+    "provenance_note": "The report was generated from working-tree files before the source commit. Every recorded code_sha256 was subsequently matched against git show of source_commit. git_base_commit records generation-time HEAD only.",
+    "rebuild_command": ".venv/bin/python scripts/build_demo.py --report-date 2026-10-12",
+    "artifact_checks": {
+      "forecast_rows": 1441,
+      "research_tables": 26,
+      "metrics_recomputed_from_csv": true,
+      "paired_interval_recomputed": true,
+      "all_source_and_code_fingerprints_match": true,
+      "dated_report_equals_shared_renderer": true,
+      "self_contained_report": true,
+      "forecast_csv_and_scores_unchanged": true,
+      "screenshot_unchanged": true,
+      "readme_relative_links_exist": true
+    },
+    "isolated_checkout_smoke": {
+      "isolated_checkout_without_raw_caches": true,
+      "dependency_environment": "existing installed dependencies; no claim of a clean package download/install",
+      "published_source_fingerprints_valid": true,
+      "expected_raw_cache_notice": true,
+      "local_cli_health_and_page": true,
+      "estimator_recalculation": true,
+      "invalid_weights_rejected": true,
+      "applied_report_download": true,
+      "dated_sample_report_served": true
+    },
+    "public_file_review": "Explicit release allowlist reviewed for scope, credentials, private information, absolute local paths and generated clutter; no findings remain. Screenshot visually inspected and has no EXIF metadata.",
+    "release_changes": "Clarified provenance and missing-cache handling; added two regression tests. Forecast CSV, model metrics and screenshot are byte-identical to the reviewed pre-release artifacts.",
+    "file_hash_scope": "Expected final release files except this self-referential validation record; README is committed in the following documentation stage."
+  },
+  "release_files_sha256": {
+    "README.md": "a9899c87bded60dd07f880ba5899986cc728837efcf5522e003c813611fdc8e7",
+    "pyproject.toml": "da30612cac703b0ed9d90e9929d0bd0dd49848c88b63993818e00389be924ad6",
+    "src/quiet_index/demo.py": "9d4ca7338e27b7d00d6171c1bd081128d321dad0388ab6da41ea4972731fa7ad",
+    "src/quiet_index/demo_web.py": "8d24a404760ef1d3639e00b83964b3a2f50e116010aba3b2f7a7044553db01e2",
+    "src/quiet_index/forecast.py": "e3ccb8c66b10aab1fd656b10fff2b685bb46b24fa222c84465a5cc005ae74ffa",
+    "src/quiet_index/demo_assets/app.js": "7ecf100dd057590c7910bc6b5d1176bf37f5091ef1f640e3053d22d1210b067f",
+    "src/quiet_index/demo_assets/style.css": "f4df14849781294fe8af23e9a25279a98a80b39eb8e6cf6a0121482b2879688b",
+    "scripts/build_demo.py": "5aba9b7b2258f0cc41af111453ee7a4bfec835c8a21a2e88c60c6b655a295b51",
+    "scripts/run_demo.py": "197872b0673344d38174488fe98cc659da213f0a12b0589529cdd230ac4a18e4",
+    "tests/test_demo.py": "a30dafdadd887383c5290d7c20a1f4883622b5d3989853fc37de456d7d5ec9aa",
+    "tests/test_forecast.py": "746667cf1b2acac03e8cef138b43b37c26f7bf4bbc6cbb4a174e203efaf4f4b3",
+    "results/demo_forecast_metrics.csv": "a3589a3f80e5cc3787c3a6bd1e97dce5156f25ca9f626abe2678d3220f29f409",
+    "results/demo_forecasts.csv": "454798d06ba0b263cb44e161134d812d3f9756821e325cd027838cea348b3487",
+    "results/demo_inputs.json": "7598a98f808c9e3aa4dd41f0c630646a138a1e4cd693798c526fb6b9de33010d",
+    "results/demo_report_2026-10-12.html": "0f34af8264d0aee1cd53a100c830958134cd013209ed1af6b01c3a01ff85c382",
+    "results/demo_verification.json": "00a306f8db122aac3c96e9da77b5f24def1cc3ed1da384efd2bd65d760381f9e",
+    "figures/demo_dashboard.jpg": "2eb1e52d9ebb6644a652b47e7fded36a0ecc0ac63c2936d9ed063699b9b8c29a"
+  }
+}

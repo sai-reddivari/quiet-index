@@ -1,0 +1,111 @@
+{
+  "research_tables": [
+    {
+      "table": "s1_data_audit",
+      "status": "reproduced"
+    },
+    {
+      "table": "s1_loadings_latest",
+      "status": "reproduced"
+    },
+    {
+      "table": "s1_rank_correlations",
+      "status": "reproduced"
+    },
+    {
+      "table": "s1_membership_summary",
+      "status": "reproduced"
+    },
+    {
+      "table": "s1_turnover",
+      "status": "reproduced"
+    },
+    {
+      "table": "s1_basket_summary",
+      "status": "reproduced"
+    },
+    {
+      "table": "s1_basket_correlations",
+      "status": "reproduced"
+    },
+    {
+      "table": "s1_mags_comparison",
+      "status": "reproduced"
+    },
+    {
+      "table": "s1_clustering_rand_index",
+      "status": "reproduced"
+    },
+    {
+      "table": "s1_proxy_robustness",
+      "status": "reproduced"
+    },
+    {
+      "table": "s2_risk_decomposition",
+      "status": "reproduced"
+    },
+    {
+      "table": "s2_index_risk",
+      "status": "reproduced"
+    },
+    {
+      "table": "s2_var_es_sensitivities",
+      "status": "reproduced"
+    },
+    {
+      "table": "s2_split_comparison",
+      "status": "reproduced"
+    },
+    {
+      "table": "s2_sorting_variable_power",
+      "status": "reproduced"
+    },
+    {
+      "table": "s2_risk_through_time",
+      "status": "reproduced"
+    },
+    {
+      "table": "s3_inputs",
+      "status": "reproduced"
+    },
+    {
+      "table": "s3_correlations",
+      "status": "reproduced"
+    },
+    {
+      "table": "s3_closed_form_check",
+      "status": "reproduced"
+    },
+    {
+      "table": "s3_portfolio_weights",
+      "status": "reproduced"
+    },
+    {
+      "table": "s3_portfolio_statistics",
+      "status": "reproduced"
+    },
+    {
+      "table": "s4_lambda_loss_curve",
+      "status": "reproduced"
+    },
+    {
+      "table": "s4_garch_parameters",
+      "status": "reproduced"
+    },
+    {
+      "table": "s4_backtest_grades",
+      "status": "reproduced"
+    },
+    {
+      "table": "s4_non_overlapping",
+      "status": "reproduced"
+    },
+    {
+      "table": "s4_current_var_by_half_life",
+      "status": "reproduced"
+    }
+  ],
+  "ml_conclusion": "The tree did not improve test QLIKE versus GARCH(1,1), selected on validation. Lower QLIKE is better.",
+  "model_failures": [],
+  "excluded_test_dates": 0
+}
