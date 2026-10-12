@@ -2,14 +2,44 @@
 
 A reproducible study of concentration, AI-factor exposure, covariance-estimator sensitivity and VaR backtesting in the S&P 100. Results are through **30 September 2026**.
 
+The research question is: **The portfolio looks calm—but how concentrated is its
+risk, what happens under stress, and can a simple ML model improve risk forecasts?**
+
 **Thesis.** The S&P 100 looks quiet and is concentrated at the same time, and a standard risk report shows the first far more clearly than the second. Short-memory estimators put its volatility at 11.6%–15.6%, near the bottom of their range since March 2020, while 70.0% of its capital and 81.6%–89.1% of its volatility sit in two baskets with a 0.80 correlation between them. The shape of that decomposition barely moves with the estimator, but the level of risk roughly doubles with a longer memory, and on SPY the parametric-normal VaR built on short lookbacks was breached 75–111 times since 2014 against about 32 expected.
 
 - **Risk is more concentrated than capital.** The Mag-7 holds **46.6%** of index capital and contributes **55.6%–60.0%** of index volatility under every covariance estimator tested.
 - **The level of risk is a choice of memory.** The same portfolio on the same day measures **24.1%** annualized volatility on the full sample, **15.6%** on the trailing year and **11.6%** on EWMA with λ = 0.94.
 
-Nothing here forecasts a drawdown or a return. The claim is about measurement: which parts of a current risk report on this index can be trusted, and which depend on the calm continuing.
+The original four-part study measures risk, rather than forecasting a drawdown
+or return. The extension adds stress scenarios, illustrative controls, a local
+dashboard and automated HTML reporting. This is a research prototype using
+frozen data. A separate experiment forecasts SPY
+variance; the SMH-related “AI loading” in the original study is an exposure
+measure, not machine learning.
 
-![Capital weight versus risk share](figures/s2_weight_vs_risk_share.png)
+![Local dashboard: capital weights versus component risk contributions](figures/demo_dashboard.jpg)
+
+**Inspect the demonstration:** [Sample HTML report](results/demo_report_2026-10-12.html)
+· [Local launch instructions](#local-interactive-risk-demonstration)
+· [Research methods](#research-design)
+· [Source](src/quiet_index/)
+· [Tests](tests/)
+· [Validation record](results/demo_validation.json)
+· [Research reproduction](results/demo_verification.json).
+
+GitHub shows the HTML report as a file, not a hosted application. Open its file
+page, choose **Download raw file**, save it with the `.html` extension, and open
+it in a browser. The report is self-contained and needs no Python or internet
+connection after downloading. The interactive dashboard runs locally; no public
+application hosting is configured.
+
+The ML result is mixed: over **1,441 test forecasts**, the decision tree's QLIKE
+is **−8.3045**, versus **−8.3205** for GARCH (lower is better). The tree improves
+variance RMSE and volatility-proxy MAE but does not improve the primary QLIKE
+metric against GARCH. The tree-minus-GARCH difference is **+0.0161**, with a
+paired 20-day block-bootstrap interval of **[−0.0229, +0.0564]**. This does not
+establish ML superiority. See the [model scores](results/demo_forecast_metrics.csv)
+and [daily forecast evidence](results/demo_forecasts.csv).
 
 Self-directed research project by Sai Reddivari alongside the CQF.
 
@@ -174,13 +204,112 @@ python scripts/run_analysis.py
 
 This writes all tables to `results/` and all figures to `figures/`. Add `--no-figures` to regenerate tables only, or run `jupyter lab` and open the notebooks in order. `python scripts/download_data.py --refresh-weights` creates a new dated holdings snapshot; update `WEIGHTS_FILE` in `src/quiet_index/config.py` to make it the active input.
 
+## Local interactive risk demonstration
+
+The local dashboard extends the study with configurable basket allocations,
+estimator comparisons, constituent drill-downs, simple-return stress P&L,
+illustrative concentration/loss controls, and a separate SPY variance-forecasting
+experiment. It runs on Python's standard-library HTTP server and uses the
+existing numerical dependencies. There is no external web service, API key,
+LLM narrative, or additional frontend installation.
+
+RUNS AS-IS in a terminal to clone, install and launch the published frozen demo
+(Python 3.11+; no raw-price download or model training is needed):
+
+```bash
+git clone https://github.com/sai-reddivari/quiet-index.git
+cd quiet-index
+python3 -m venv .venv
+source .venv/bin/activate
+python -m pip install -e ".[dev]"
+python scripts/run_demo.py
+```
+
+After launch, open [the local dashboard](http://127.0.0.1:8790) on the same computer.
+This address is not a public demo link. The server binds only to
+`127.0.0.1`. Use `--port 8791` if that port is occupied, and stop with Ctrl+C.
+A fresh clone shows a **NOT VERIFIED LOCALLY** notice because raw price caches
+are intentionally excluded from Git. It can still display the published bundle,
+recalculate allocations/stress and export reports. It has not independently
+recomputed the underlying covariance estimates or ML experiment from prices.
+
+NEEDS: the environment above and the original raw-price cache under `data/raw/`
+to rebuild the exact frozen study. A fresh `python scripts/download_data.py`
+can populate that cache, but vendor revisions may prevent exact reproduction.
+
+```bash
+python scripts/build_demo.py --report-date 2026-10-12
+python -m pytest -q
+```
+
+The build reads the cached data, reruns all four research sections in memory,
+compares their tables with the saved CSVs, and writes only `results/demo_*`
+artifacts. It does not overwrite the existing research tables, figures, or
+notebooks. The committed validation record also records release checks; it is
+not automatically replaced by the build command. Raw data stays uncommitted.
+
+The dashboard's **Apply & recalculate** button validates that long-only basket
+weights sum to 100%; it never silently normalizes an invalid portfolio.
+Within-basket constituent weights remain fixed. **Export applied HTML report**
+downloads a self-contained dated report using the same Python calculations and
+renderer. Unapplied edits are excluded. The build also saves a default report,
+daily forecast CSV, model-score CSV, and a research-verification JSON file.
+No internet connection is needed to open the exported HTML.
+
+RUNS AS-IS to re-export the current frozen bundle without retraining:
+
+```bash
+.venv/bin/python scripts/build_demo.py --reuse-inputs --report-date 2026-10-12
+```
+
+The controls flag stale prices relative to the report date, missing/flat prices,
+and source/code fingerprints that changed after the bundle was built. Absent raw
+caches are distinguished from missing or changed published code. The
+thresholds are demonstration settings, not institutional risk appetite or
+regulatory standards. Historical stress replay requires valid exact endpoint
+prices for every holding; unavailable scenarios are blocked. It applies
+historical adjusted-price moves to today's holdings and is not actual historical
+fund performance. Hypothetical shocks are total basket simple returns, with
+P&L equal to the weighted sum of those returns. There is no liquidity liquidation
+model or derivatives repricing engine.
+
+The ML experiment forecasts the next trading day's squared SPY log return,
+a noisy daily variance proxy. A decision tree uses six volatility features known
+at the forecast close. Training is through 2018, validation spans 2019–2020,
+and the untouched evaluation period starts in 2021. Boundary labels are purged;
+the selected tree is refit on labels observed through 2020 and frozen. Rolling
+21-day mean squared returns, EWMA (0.94 and 0.72), and a checked zero-mean
+GARCH(1,1) implementation are evaluated on exactly the same dates. The tree's
+depth and minimum leaf size, and the comparison baseline, are chosen on
+validation QLIKE. No settings are chosen from test performance.
+
+The report includes QLIKE, variance RMSE, volatility-proxy MAE, regime breakdowns,
+validation permutation importance, frozen tree rules, fit failures, and a paired
+20-day block-bootstrap interval. One-day labels do not overlap, although
+volatility clustering remains. The block interval is descriptive, and permutation
+importance is not causal. This experiment is separate from the existing
+SMH-based AI loading and does not validate basket-portfolio forecasts.
+
+Implementation: [`demo.py`](src/quiet_index/demo.py) owns calculation and input preparation;
+[`forecast.py`](src/quiet_index/forecast.py) owns chronological model evaluation;
+[`demo_web.py`](src/quiet_index/demo_web.py) shares rendering between dashboard and
+report; [`demo_assets/`](src/quiet_index/demo_assets/) contains local CSS and JavaScript.
+The generated reports record data dates, packages, model versions, Git base
+commit, and SHA-256 fingerprints. The report was generated before the release
+commit: `git_base_commit` is the HEAD at generation, not a claim that it contains
+the report's exact source. `code_sha256` identifies the working-tree modules,
+assets, build scripts and dependency declarations used. The release validation
+record ties those hashes to the published files. Treat the new demonstration as an extension;
+its verified outputs do not automatically revise the four study conclusions.
+
 ## Tests
 
-The repository contains 18 tests, run with `pytest -q`. They cover OLS recovery and residual orthogonality; equivalence of the two-stage and joint AI-loading estimates; minimum-observation and formation-date rules; basket assignment and missing-member reweighting; EWMA recursion and half-life calculations; positive-definite covariance output; closed-form versus numerical frontier solutions; Euler risk decomposition; analytical VaR and ES sensitivities; Kupiec and Christoffersen behavior; and prevention of look-ahead in volatility estimates.
+Run `.venv/bin/python -m pytest -q`. The original 18 tests cover OLS recovery and residual orthogonality; equivalence of the two-stage and joint AI-loading estimates; minimum-observation and formation-date rules; basket assignment and missing-member reweighting; EWMA recursion and half-life calculations; positive-definite covariance output; closed-form versus numerical frontier solutions; Euler risk decomposition; analytical VaR and ES sensitivities; Kupiec and Christoffersen behavior; and prevention of look-ahead in volatility estimates. Additional demonstration tests cover simple-return scenario aggregation, buy-and-hold compounding, blocked incomplete replays, invalid weights/covariances/limits, zero allocations, freshness controls, source changes, forecast-date alignment, purged labels, future-data invariance, GARCH causality, and common-date scoring.
 
 ## Interpretation and limitations
 
 - Current membership is projected backward, creating survivorship bias. Historical returns are descriptive and are not performance claims.
+- Missing constituent returns are excluded and available names reweighted within research baskets; this changes historical exposure. Stress replays instead block incomplete holdings: the 2020 and 2022 scenarios are unavailable. The separate ML test uses 1,441 common dates with no excluded test dates or model-fit failures.
 - Basket membership is reconstructed quarterly, but constituent weights are not: the 1 October 2026 OEF weights are reused throughout. The basket series are returns to changing characteristic groups under constant constituent weights, not reconstructions of historical OEF or S&P 100 returns.
 - The baskets are quarterly characteristic portfolios, not permanent company groups. Roughly one-third of names change basket at a typical formation.
 - AI loading measures residual co-movement with SMH after removing SPY. It is not a fundamental measure of a company’s AI revenue or strategy.
@@ -197,6 +326,6 @@ This is a risk-analytics study, not investment advice.
 
 MIT License. See [`LICENSE`](LICENSE).
 
-Analysis code and results are my own; some project scaffolding was AI-assisted.
+Original study by Sai Reddivari, with AI-assisted project scaffolding. I directed the AI-assisted dashboard, stress-control and ML extension and completed a walkthrough. Automated reproduction and tests do not constitute my independent review of every line or professional ML deployment.
 
 *Sai Reddivari · 2026*
