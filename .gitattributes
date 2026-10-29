@@ -1,0 +1,5 @@
+# Research reports call the reusable Python package; exclude them from language statistics.
+notebooks/01_universe_factors_baskets.ipynb linguist-documentation
+notebooks/02_risk_decomposition.ipynb linguist-documentation
+notebooks/03_mean_variance.ipynb linguist-documentation
+notebooks/04_var_backtest.ipynb linguist-documentation
